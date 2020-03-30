@@ -1,0 +1,47 @@
+[
+	{
+	  "precinctsAvailable": [
+		"0D3",
+		"0D4"
+	  ],
+	  "candidates": [
+		{
+		  "politicalParty": "Democrat",
+		  "firstName": "Jay",
+		  "lastName": "Jicketts",
+		  "encumbant": false,
+		  "answers": ""
+		},
+		{
+		  "politicalParty": "Republican",
+		  "firstName": "Pete",
+		  "lastName": "Hicketts",
+		  "encumbant": true,
+		  "answers": ""
+		}
+	  ],
+	  "position": "Governor"
+	},
+	{
+	  "precinctsAvailable": [
+		"0D4"
+	  ],
+	  "candidates": [
+		{
+		  "politicalParty": "Independent",
+		  "firstName": "Judge",
+		  "lastName": "Dredd",
+		  "encumbant": false,
+		  "answers": ""
+		},
+		{
+		  "politicalParty": "Independent",
+		  "firstName": "Henry",
+		  "lastName": "Corpocillini",
+		  "encumbant": false,
+		  "answers": ""
+		}
+	  ],
+	  "position": "County Judge"
+	}
+  ]
