@@ -1,1 +1,4 @@
-<p>Ballot being created. The selected precinct is {{precinct.name}}</p>
+<div *ngFor="let ballotEntry of this.ballot.$ballotEntries">
+	<p>{{ballotEntry.position}}: {{ballotEntry.candidates[0].firstName}} {{ballotEntry.candidates[0].lastName}} vs.
+	   {{ballotEntry.candidates[1].firstName}} {{ballotEntry.candidates[1].lastName}}
+</div>
