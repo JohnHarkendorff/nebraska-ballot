@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Precinct } from '../models/Precinct';
 import { PrecinctSelectorComponent } from './precinct-selector/precinct-selector.component';
 import { FullBallotComponent } from './full-ballot/full-ballot.component';
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 
 @Component({
 	selector: 'app-root',

@@ -4,7 +4,7 @@ import { BallotEntry } from '../../models/BalloTentry';
 import { Candidate } from '../../models/Candidate';
 import { Precinct } from '../../models/Precinct';
 import * as ballotEntriesJson from './../../assets/testballot.json';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -16,17 +16,12 @@ export class FullBallotComponent implements OnInit {
 	ballot: Ballot;
 	form: FormGroup;
 	precinct: Precinct;
-	description: string;
 	
-	constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<FullBallotComponent>, @Inject(MAT_DIALOG_DATA) precinct) { 
+	constructor(@Inject(MAT_DIALOG_DATA) precinct) { 
 		this.precinct = precinct;
-		this.description = precinct.description;
 	}
 
 	ngOnInit() {
-		this.form = this.fb.group({
-            description: [this.description, []]
-        });
 		this.ballot = this.generateBallot(this.precinct);
 	}
 	
