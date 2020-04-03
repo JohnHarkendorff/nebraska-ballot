@@ -1,5 +1,5 @@
 <mat-dialog-content>
 	<div *ngFor="let ballotEntry of this.ballot.$ballotEntries">
-		<app-ballot-entry #child [ballotEntry]="ballotEntry" (cardViewOpened)="closeAllOtherCardViews(ballotEntryId)"></app-ballot-entry>
+		<app-ballot-entry [ballotEntry]="ballotEntry" [selectedBallotEntryId]="selectedBallotEntryId" (cardViewOpened)="newBallotEntrySelected($event)"></app-ballot-entry>
 	</div>
 </mat-dialog-content>

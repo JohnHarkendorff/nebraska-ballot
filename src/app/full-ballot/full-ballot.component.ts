@@ -8,18 +8,20 @@ import { BallotEntryComponent } from "./../ballot-entry/ballot-entry.component";
 	templateUrl: './full-ballot.component.html',
 	styleUrls: ['./full-ballot.component.css']
 })
+
 export class FullBallotComponent implements OnInit {
-	@ViewChild(BallotEntryComponent) private ballotEntryComponent: BallotEntryComponent;
 	ballot: Ballot;
+	selectedBallotEntryId: number = null;
 	
 	constructor(@Inject(MAT_DIALOG_DATA) inputData) { 
 		this.ballot = inputData.ballot;
 	}
 
-	public closeAllOtherCardViews(ballotEntryId: number) {
-		this.ballotEntryComponent.closeCardView(ballotEntryId);
-	}
-
 	ngOnInit() { }
+
+	/* Function triggered from EventEmitter in ballot-entry */
+	public newBallotEntrySelected(ballotEntryId: number) {
+		this.selectedBallotEntryId = ballotEntryId;
+	}
 
 }

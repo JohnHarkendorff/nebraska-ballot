@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { BallotEntry } from './../../models/BallotEntry';
 
 @Component({
@@ -9,25 +9,25 @@ import { BallotEntry } from './../../models/BallotEntry';
 
 export class BallotEntryComponent implements OnInit {
 	@Input() ballotEntry: BallotEntry;
+	@Input() selectedBallotEntryId: number;
 	@Output() cardViewOpened = new EventEmitter();
 	displayCardView: boolean = false;
 
 	constructor() { }
 
-	ngOnInit(): void {
+	ngOnInit() { }
+
+	/* When selectedBallotEntryId changes in the full-ballot, close all other card views */
+	ngOnChanges() {
+		if (this.selectedBallotEntryId != this.ballotEntry.$id) {
+			this.displayCardView = false;
+		}
 	}
 
 	public toggleCardView() {
 		this.displayCardView = this.displayCardView ? false : true;
 		if (this.displayCardView) {
 			this.cardViewOpened.emit(this.ballotEntry.$id);
-		}
-	}
-
-	public closeCardView(ballotEntryId: number) {
-		console.log("called child's method from parent!");
-		if (this.ballotEntry.$id !== ballotEntryId) {
-			this.displayCardView = false;
 		}
 	}
 }
