@@ -1,3 +1,5 @@
-<div *ngFor="let ballotEntry of this.ballot.$ballotEntries">
-	<app-ballot-entry [ballotEntry]="ballotEntry"></app-ballot-entry>
-</div>
+<mat-dialog-content>
+	<div *ngFor="let ballotEntry of this.ballot.$ballotEntries">
+		<app-ballot-entry [ballotEntry]="ballotEntry"></app-ballot-entry>
+	</div>
+</mat-dialog-content>

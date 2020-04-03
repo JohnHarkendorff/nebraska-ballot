@@ -7,13 +7,15 @@ import { FullBallotComponent } from './full-ballot/full-ballot.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BallotEntryComponent } from './ballot-entry/ballot-entry.component';
+import { CandidateCardViewComponent } from './candidate-card-view/candidate-card-view.component';
 
 @NgModule({
   declarations: [
 	AppComponent,
 	PrecinctSelectorComponent,
 	FullBallotComponent,
-	BallotEntryComponent
+	BallotEntryComponent,
+	CandidateCardViewComponent
   ],
   imports: [
 	BrowserModule,

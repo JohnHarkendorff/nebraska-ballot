@@ -11,6 +11,7 @@ import * as ballotEntriesJson from './../assets/testballot.json';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
 	title = 'nebraska-ballot';
 

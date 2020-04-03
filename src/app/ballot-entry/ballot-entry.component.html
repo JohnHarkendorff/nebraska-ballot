@@ -1,2 +1,7 @@
-<p>{{ballotEntry.position}}: {{ballotEntry.candidates[0].firstName}} {{ballotEntry.candidates[0].lastName}} vs.
-	{{ballotEntry.candidates[1].firstName}} {{ballotEntry.candidates[1].lastName}} </p>
+<button class="clickableText" (click)="toggleCardView()">
+	{{ballotEntry.position}}: 
+	{{ballotEntry.candidates[0].firstName}} {{ballotEntry.candidates[0].lastName}} vs.
+	{{ballotEntry.candidates[1].firstName}} {{ballotEntry.candidates[1].lastName}} 
+</button>
+
+<app-candidate-card-view *ngIf="displayCardView"></app-candidate-card-view>

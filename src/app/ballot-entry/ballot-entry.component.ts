@@ -9,10 +9,14 @@ import { BallotEntry } from './../../models/BallotEntry';
 
 export class BallotEntryComponent implements OnInit {
 	@Input() ballotEntry: BallotEntry;
+	displayCardView: boolean = false;
 
 	constructor() { }
 
 	ngOnInit(): void {
 	}
 
+	public toggleCardView() {
+		this.displayCardView = this.displayCardView ? false : true;
+	}
 }
