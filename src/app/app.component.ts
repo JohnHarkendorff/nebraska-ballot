@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Precinct } from '../models/Precinct';
 import { Ballot } from '../models/Ballot';
+import { BallotEntry } from '../models/BallotEntry';
 import { PrecinctSelectorComponent } from './precinct-selector/precinct-selector.component';
 import { FullBallotComponent } from './full-ballot/full-ballot.component';
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
@@ -47,6 +48,11 @@ export class AppComponent {
 			}
 		});
 
+		/* Set the IDs for each ballot entry so ballot-entry components can communicate */
+		for (let i = 0; i < thisBallotEntries.length; i++) {
+			thisBallotEntries[i].$id = i;
+		}
+		
 		this.ballot = new Ballot(this.selectedPrecinct, thisBallotEntries);
 
 		const dialogConfig = new MatDialogConfig();

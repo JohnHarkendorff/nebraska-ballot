@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BallotEntry } from './../../models/BallotEntry';
 
 @Component({
@@ -9,6 +9,7 @@ import { BallotEntry } from './../../models/BallotEntry';
 
 export class BallotEntryComponent implements OnInit {
 	@Input() ballotEntry: BallotEntry;
+	@Output() cardViewOpened = new EventEmitter();
 	displayCardView: boolean = false;
 
 	constructor() { }
@@ -18,5 +19,15 @@ export class BallotEntryComponent implements OnInit {
 
 	public toggleCardView() {
 		this.displayCardView = this.displayCardView ? false : true;
+		if (this.displayCardView) {
+			this.cardViewOpened.emit(this.ballotEntry.$id);
+		}
+	}
+
+	public closeCardView(ballotEntryId: number) {
+		console.log("called child's method from parent!");
+		if (this.ballotEntry.$id !== ballotEntryId) {
+			this.displayCardView = false;
+		}
 	}
 }

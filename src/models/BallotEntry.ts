@@ -2,14 +2,24 @@ import { Candidate } from './Candidate';
 import { Precinct } from './Precinct';
 
 export class BallotEntry {
-	private precinctsAvailable: Array<Precinct>;
+	private id: number;
 	private candidates: Array<Candidate>;
 	private position: string;
+	private precinctsAvailable: Array<Precinct>;
 
-	constructor($precinctsAvailable: Array<Precinct>, $candidates: Array<Candidate>, $position: string) {
+	constructor($precinctsAvailable: Array<Precinct>, $candidates: Array<Candidate>, $position: string, $id: number) {
 		this.precinctsAvailable = $precinctsAvailable;
 		this.candidates = $candidates;
 		this.position = $position;
+		this.id = $id;
+	}
+
+	public get $id(): number {
+		return this.id;
+	}
+
+	public set $id(value: number) {
+		this.id = value;
 	}
 
 	public get $precinctsAvailable(): Array<Precinct> {
